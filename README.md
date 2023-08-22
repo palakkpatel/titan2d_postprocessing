@@ -1,5 +1,15 @@
 # Titan2D Scripts
-This repo contains all the important Pre & Post-Processing Scripts for Titan2D. This helps to setup runs and modify outputs as per requirements more efficiently. 
+This repository houses a collection of essential pre and post-processing scripts designed to streamline your experience with Titan2D simulations. Whether you're setting up runs or fine-tuning output modifications, these scripts are here to help you achieve your goals more efficiently.
+
+These scripts are intended to assist you in two key aspects:
+
+**Pre-Processing:**
+  - Generating input files with required parameters for Titan2D simulations.
+  - Automating the setup of simulation scenarios and initial conditions.
+
+**Post-Processing:**
+  - Analyzing simulation results and generating meaningful visualizations.
+  - Modifying and formatting output data to match specific requirements.
 
 ## Titan2D Output
 
