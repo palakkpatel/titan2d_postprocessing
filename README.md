@@ -21,7 +21,7 @@ These scripts are intended to assist you in two key aspects:
 
 ## Scripts
 
-### get_erosion_tecplot.py
+### get_field_tecplot.py
 
 - Reads the provided `.h5` file and returns the desried output field such as momemteum, pile_height, total_erosion in  TECPLOT format.
 
