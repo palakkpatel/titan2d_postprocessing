@@ -21,3 +21,6 @@ for i in range(6):
         lhs_unscaled[i,j] = lhs[i,j]*diff + min_para[i]
 
 
+#Saving Latin Hypercube File
+lhs_unscaled = np.transpose(lhs_unscaled)
+np.savetxt('Latin_model_parameters_mask.txt',lhs_unscaled,delimiter=',')
