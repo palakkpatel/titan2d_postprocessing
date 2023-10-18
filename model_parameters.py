@@ -15,4 +15,9 @@ DS = float(sys.argv[5])
 R_coef = float(sys.argv[6])
 
 #print(type(ks))
+para=[ks, manning, lambda_basal, F, DS, R_coef]
+print(para)
+para_array = array('d', para)
+with open('parameters.bin','wb') as f:
+    para_array.tofile(f)
 
