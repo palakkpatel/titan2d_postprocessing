@@ -17,7 +17,7 @@ temp_sim="../temp_sim"
 sim_dir="sim_noAMR"
 
 # Slurm File Name
-slurm_file = "titan_run.slurm"
+slurm_file="titan_run.slurm"
 
 
 while read line; do
