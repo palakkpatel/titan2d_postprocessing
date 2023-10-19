@@ -14,7 +14,7 @@ para6=1.2558
 NPROCS=8
 
 # Path to Titan
-export titan=/cluster/tufts/patralab/ppatel20/titan2d/titan_wsp/titan2d_bld/iccoptompmpi/bin/titan
+export titan="/cluster/tufts/patralab/ppatel20/titan2d/titan_wsp/titan2d_bld/iccoptompmpi/bin/titan"
 
 #Path to model_parameters.py
 model_parameters="../model_parameters.py"
