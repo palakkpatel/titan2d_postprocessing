@@ -23,6 +23,13 @@ model_parameters="../model_parameters.py"
 python3 model_parameters.py $para1 $para2 $para3 $para4 $para5 $para6
 
 # Run Titan2d
+NOW=`date`
+echo "Simulation Starting Time: "$NOW
+echo "====================================================="
 $titan -nt $NPROCS input.py
+echo "*****************************************************"
+NOW=`date`
+echo "Simulation Ending Time: "$NOW
+echo "Done"
 
 
