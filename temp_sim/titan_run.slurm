@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --account=normal
-#SBATCH --job-name=sanysidro
+#SBATCH --job-name=Ensemble_Run
 #SBATCH --output=run.out
 #SBATCH --error=run.err
 #SBATCH --nodes=1
@@ -21,15 +21,20 @@ echo "Working Directory="$SLURM_SUBMIT_DIR
 NPROCS=`srun --nodes=${SLURM_NNODES} bash -c 'hostname' |wc -l`
 echo "NPROCS="$NPROCS
 echo $LD_LIBRARY_PATH
+
+# Added Necessary Modeules
 module load gcc/9.3.0
+
 echo $LD_LIBRARY_PATH
 export OMP_NUM_THREADS=$NPROCS
+
+# Path to Titan
 export titan=/cluster/tufts/patralab/ppatel20/titan2d/titan_wsp/titan2d_bld/iccoptompmpi/bin/titan
 
 NOW=`date`
 echo "Simulation Starting Time: "$NOW
 echo "====================================================="
-$titan -nt 32 input_2piles.py
+$titan -nt $NPROCS input.py
 echo "*****************************************************"
 NOW=`date`
 echo "Simulation Ending Time: "$NOW
