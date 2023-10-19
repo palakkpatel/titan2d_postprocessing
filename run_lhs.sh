@@ -1,9 +1,25 @@
 #! /bin/bash
 
 filename='Latin_model_parameters_mask.txt'
+
 n=1
+
+# Starting Simulation Number from the File
 n_start=61
+
+# Last Simulation to run (inclusive)
 n_stop=65
+
+# Simulation Template DIR
+temp_sim="../temp_sim"
+
+# Simulation DIR Prefix
+sim_dir="sim_noAMR"
+
+# Slurm File Name
+slurm_file = "titan_run.slurm"
+
+
 while read line; do
     line=$(echo $line | sed 's/\,/ /g')
     para1=$(echo $line | awk '{print $1}')
@@ -16,12 +32,12 @@ while read line; do
     if [ $n -gt $((n_start-1)) ]
     then
         python3 model_parameters.py $para1 $para2 $para3 $para4 $para5 $para6
-        foldername="sim_noAMR_${n}"
+        foldername="${sim_dir}_${n}"
         mkdir $foldername
         mv parameters.bin $foldername/
         cd $foldername
-        cp -r ../temp_sim/* ./
-        sbatch titan_run.slurm
+        cp -r $temp_sim/* ./
+        sbatch $slurm_file
         cd ..
     fi
     #echo "Line no: $n = $line"
