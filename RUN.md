@@ -29,3 +29,6 @@
 - Update Simulation Parameters
 
 - Update `input.py`
+  - Check for DEMs info in `sim.setGIS()`
+  - Add Dummy Pile in the simulation region using `sim.addPile()`
+  - Check for `max_time` and `max_iter` in `setTimeProps()`
