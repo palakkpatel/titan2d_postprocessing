@@ -1,6 +1,6 @@
 #! /bin/bash
 
-filename='Latin_model_parameters_mask.txt'
+parameter_design_file='Latin_model_parameters_mask.txt'
 
 n=1
 
@@ -19,6 +19,8 @@ sim_dir="sim_noAMR"
 # Slurm File Name
 slurm_file="titan_run.slurm"
 
+# Path to model_parameters.py
+model_parameters="../model_parameters.py"
 
 while read line; do
     line=$(echo $line | sed 's/\,/ /g')
@@ -31,7 +33,7 @@ while read line; do
 
     if [ $n -gt $((n_start-1)) ]
     then
-        python3 model_parameters.py $para1 $para2 $para3 $para4 $para5 $para6
+        python3 $model_parameters $para1 $para2 $para3 $para4 $para5 $para6
         foldername="${sim_dir}_${n}"
         mkdir $foldername
         mv parameters.bin $foldername/
@@ -46,5 +48,5 @@ while read line; do
     then
         break
     fi
-done < $filename
+done < $parameter_design_file
 
