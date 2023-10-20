@@ -20,7 +20,7 @@ export titan="/cluster/tufts/patralab/ppatel20/titan2d/titan_wsp/titan2d_bld/icc
 model_parameters="../model_parameters.py"
 
 # Run model_parameters.py
-python3 model_parameters.py $para1 $para2 $para3 $para4 $para5 $para6
+python3 $model_parameters $para1 $para2 $para3 $para4 $para5 $para6
 
 # Run Titan2d
 NOW=`date`
