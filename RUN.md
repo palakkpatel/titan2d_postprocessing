@@ -24,9 +24,9 @@
     cp <PATH_TO_titan2d_scripts>/run_titan_debrisflow.sh ./
     ```
 
-- Check `<PATH_to_titan2d>` and `<PATH_to_model_parameters.py>` in `run_titan_debrisflow.sh`
-
-- Update Simulation Parameters
+- Updated `run_titan_debrisflow.sh`
+  - Check `<PATH_to_titan2d>` and `<PATH_to_model_parameters.py>` in `run_titan_debrisflow.sh`
+  - Update Simulation Parameters
 
 - Update `input.py`
   - Check for DEMs info in `sim.setGIS()`
