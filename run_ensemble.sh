@@ -1,7 +1,7 @@
 #! /bin/bash
 
 # ==============================================================================
-# Script: run_simulations.sh
+# Script: run_ensemble.sh
 # Description:
 #   This script automates the process of executing simulations based on a 
 #   parameter design file. It reads parameters from the file, sets up directories, 
@@ -9,7 +9,7 @@
 #   simulations specified by the user.
 
 # Example:
-#   ./run_simulations.sh
+#   ./run_ensemble.sh
 
 # Author:
 #   Palak Patel
