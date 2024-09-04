@@ -28,14 +28,14 @@ parent_dir="${field}_${dem_short}"
 
 # Check if the parent directory exists, create it if not
 if ! [ -d $parent_dir ]; then
-    # mkdir $parent_dir
-    echo $parent_dir
+    mkdir $parent_dir
+    echo "Created Dir ${parent_dir}"
 fi
 
 # Loop through each simulation directory and copy the output file to the parent directory
 for i in $(seq $N_START $N_STOP) 
 do
     sim_dir="${sim_dir_prefix}${i}"
-    echo -ne "Copying ${titan_output_file} from ${sim_dir}\n" 
+    echo -ne "Copying ${titan_output_file} from ${sim_dir}\r" 
     cp $sim_dir/$titan_output_file $parent_dir/"${field}_${i}"
 done
