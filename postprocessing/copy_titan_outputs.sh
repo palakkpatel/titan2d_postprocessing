@@ -65,7 +65,7 @@ parent_dir="${field}_${dem_short}"
 
 # Check if the parent directory exists, create it if not
 if ! [ -d $parent_dir ]; then
-    # mkdir $parent_dir
+    mkdir $parent_dir
     echo "Created Dir ${parent_dir}"
 fi
 
@@ -74,5 +74,5 @@ for i in $(seq $N_START $N_STOP)
 do
     sim_dir="${sim_dir_prefix}${i}"
     echo -ne "Copying ${titan_output_file} from ${sim_dir}\n" 
-    # cp $sim_dir/$titan_output_file $parent_dir/"${field}_${i}"
+    cp $sim_dir/$titan_output_file $parent_dir/"${field}_${i}"
 done
