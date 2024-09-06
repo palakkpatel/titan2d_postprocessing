@@ -22,6 +22,7 @@ titan_output_file="pileheightrecord.-00001" # Titan2D output file to be copied
 sim_dir_prefix="sim_" # Prefix for simulation directories
 N_START=1
 N_STOP=64
+N_STEP=1
 
 # If the first argument is not "force", prompt the user to confirm or modify the parameters
 if [ "$1" != "force" ]
@@ -57,6 +58,11 @@ then
     if [ -n "$user_input" ]; then
         N_STOP=$user_input
     fi
+
+    read -p "Is N_STEP = '${N_STEP}': " user_input
+    if [ -n "$user_input" ]; then
+        N_STEP=$user_input
+    fi
 fi
 
 # Directory to store copied files
@@ -70,7 +76,7 @@ if ! [ -d $parent_dir ]; then
 fi
 
 # Loop through each simulation directory and copy the output file to the parent directory
-for i in $(seq $N_START $N_STOP) 
+for i in $(seq $N_START $N_STEP $N_STOP) 
 do
     sim_dir="${sim_dir_prefix}${i}"
     echo -ne "Copying ${titan_output_file} from ${sim_dir}\n" 
