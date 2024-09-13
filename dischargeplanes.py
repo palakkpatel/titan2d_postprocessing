@@ -9,8 +9,6 @@ discharge_df = pd.read_csv(discharge_file)
 
 number_of_planes = discharge_df.shape[1] - 1
 
-
-
 plane = [0,0,0,0,0]
 plane[0] = (260067.4,3815819.6,260147.4,3815819.6)
 plane[1] = (260240.6,3815819.6,260320.6,3815819.6)
